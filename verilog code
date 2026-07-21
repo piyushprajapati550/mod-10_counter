@@ -1,0 +1,18 @@
+`timescale 1ns / 1ps
+
+module Mod_10_counter ( clk , rst , Q);
+input clk , rst;
+output reg [3:0]Q;
+
+always @(posedge clk)
+begin
+if (rst)
+Q <= 4'b0000; 
+
+else if (Q == 4'D9)
+Q <= 4'b0000;
+
+else 
+Q <= Q +1'b1;
+end
+endmodule
